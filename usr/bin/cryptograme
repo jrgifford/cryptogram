@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#absolute
+#python /opt/pyCryptogramGame/pyCryptogramGame.py
+#portable python 2.7.x
+#python2 ../../opt/pyCryptogramGame/pyCryptogramGame.py
+#portable python 3.x.x
+python3 ../../opt/pyCryptogramGame/pyCryptogramGame.py
