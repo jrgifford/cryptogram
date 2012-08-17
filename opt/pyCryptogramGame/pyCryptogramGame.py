@@ -54,7 +54,7 @@ Folder structure
 from gi.repository import Gtk
 
 #parsing imports for configs and quotes
-#from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 
 #for mixing up letters
 import string
@@ -273,7 +273,7 @@ class UI():
         """
         Show the trophy contents
         """
-        #TODO move all these back to the button callbacks as swap_main_win("something")
+        #TODO move all these back to the button callbacks as swap_main_win("accomplishments_pane")
         self.__show_win("accomplishments_pane")
         
 
@@ -504,36 +504,51 @@ class SubstPuzzleWin(Gtk.Box):
         """
         super(Gtk.Box, self).__init__()
         self.crypt_text = crypt_text.split()
-        #TODO shim in the row logic...
         self.set_orientation(Gtk.Orientation.VERTICAL)
-        """
-        sep = Gtk.Separator.new(True)
-        sep.set_orientation(Gtk.Orientation.HORIZONTAL)
-        self.pack_start(sep , False, False, 0)
-        """
         
-        #This should be in PuzzleRow
-        self.set_orientation(Gtk.Orientation.HORIZONTAL)
-        for word in self.crypt_text:
-            a_word = SubstPuzzleWord(word)
-            self.pack_start(a_word, False, False, 0)
-            space = SubstPuzzleWord(' ')
-            self.pack_start(space, False, False, 0)
+        self.update_labels()
         
     def update_labels(self):
         """
+        It would be faster to update the labels instead of reallocate
+        all of them every time, but I wanted to belt out a working demo
         """
         children = self.get_children()
         for child in children:
             self.remove(child)
-        #This should be in PuzzleRow
+            
+        line_length = 0
+        rows_lists = []
+        temp_row = []
         for word in self.crypt_text:
-            a_word = SubstPuzzleWord(word)
-            self.pack_start(a_word, False, False, 0)
-            space = SubstPuzzleWord(' ')
-            self.pack_start(space, False, False, 0)
-            self.show_all()
-        app.worker.game_state.puzzle_data.algo_work.solver.check()
+            line_length += len(word)+1
+            if line_length > 35:
+                line_length = 0
+                rows_lists.append(temp_row)
+                temp_row = []
+            else:
+                temp_row.append(word)
+        rows_lists.append(temp_row)
+        
+        for row in rows_lists:
+            sep = Gtk.Separator.new(True)
+            sep.set_orientation(Gtk.Orientation.HORIZONTAL)
+            self.pack_start(sep , False, False, 0)
+        
+            #This should be in PuzzleRow
+            temp_box = Gtk.Box.new(Gtk.Orientation.HORIZONTAL, 0)
+            for word in row:
+                a_word = SubstPuzzleWord(word)
+                temp_box.pack_start(a_word, False, False, 0)
+                space = SubstPuzzleWord(' ')
+                temp_box.pack_start(space, False, False, 0)
+            self.pack_start(temp_box , False, False, 0)
+            
+        sep = Gtk.Separator.new(True)
+        sep.set_orientation(Gtk.Orientation.HORIZONTAL)
+        self.pack_start(sep , False, False, 0)
+        self.show_all()
+        app.worker.game_state.puzzle_data.solver.check()
             
 class SubstPuzzleRow(Gtk.Box):
     """
@@ -698,7 +713,7 @@ class GameState():
         Method to set a quote
         Sets a tuple ([category, another category, ...], 'the quote', 'the author')
         """
-        self.quote_data = (['testing', 'more testing'], 'This is a test.?!"\'', 'A Tester', False)
+        self.quote_data = (['testing', 'more testing'], 'This is a test.?!"\' aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa', 'A Tester', False)
         self.puzzle_data = PuzzleData(self.quote_data[1])
         self.puzzle_data.init()
         
@@ -768,7 +783,7 @@ class Handler():
         Trophy button clicked callback
         """
         
-        app.ui.show_trophy_win()
+        app.ui.swap_main_win("accomplishments_pane")
         
 
     def on_close_trohpy_button_clicked(self, *args, **kwds):

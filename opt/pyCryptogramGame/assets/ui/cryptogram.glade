@@ -84,10 +84,8 @@ If you have a feature request, donate or purchase.
 
 Derivative works are not allowed beyond personal use.
 
-Thanks for playing.
-
-Purchase guarantees feature updates.
-Donations do not.</property>
+Thanks for playing.</property>
+                            <property name="justify">center</property>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -123,7 +121,7 @@ Donations do not.</property>
                 </child>
                 <child>
                   <object class="GtkLinkButton" id="contact_link_label">
-                    <property name="label" translatable="yes">Contact Us</property>
+                    <property name="label" translatable="yes">Contact</property>
                     <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
@@ -140,26 +138,11 @@ Donations do not.</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLinkButton" id="purchase_link_label">
-                    <property name="label" translatable="yes">Purchase</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="has_tooltip">True</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="relief">none</property>
-                    <property name="uri">apt://pyCryptoGame</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">2</property>
-                  </packing>
+                  <placeholder/>
                 </child>
                 <child>
                   <object class="GtkLinkButton" id="donation_link_label">
-                    <property name="label" translatable="yes">Donations</property>
+                    <property name="label" translatable="yes">Pledgie Donations</property>
                     <property name="use_action_appearance">False</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
@@ -167,7 +150,7 @@ Donations do not.</property>
                     <property name="has_tooltip">True</property>
                     <property name="use_action_appearance">False</property>
                     <property name="relief">none</property>
-                    <property name="uri">http://www.pledgie.com/something</property>
+                    <property name="uri">http://127.0.0.1</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -966,7 +949,7 @@ And more...</property>
                         </child>
                       </object>
                       <packing>
-                        <property name="resize">False</property>
+                        <property name="resize">True</property>
                         <property name="shrink">True</property>
                       </packing>
                     </child>
