@@ -461,6 +461,7 @@ And more...</property>
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">New</property>
                 <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">New</property>
                 <property name="use_underline">True</property>
@@ -477,6 +478,7 @@ And more...</property>
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Save</property>
                 <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Save</property>
                 <property name="use_underline">True</property>
@@ -493,6 +495,7 @@ And more...</property>
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Discard</property>
                 <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Discard</property>
                 <property name="use_underline">True</property>
@@ -509,6 +512,7 @@ And more...</property>
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Home</property>
                 <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Home</property>
                 <property name="use_underline">True</property>
@@ -525,6 +529,7 @@ And more...</property>
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Trophies</property>
                 <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Trophy</property>
                 <property name="use_underline">True</property>
@@ -541,6 +546,7 @@ And more...</property>
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Configure</property>
                 <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Configure</property>
                 <property name="use_underline">True</property>
@@ -557,6 +563,7 @@ And more...</property>
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">About</property>
                 <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">About</property>
                 <property name="use_underline">True</property>
@@ -573,6 +580,7 @@ And more...</property>
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="tooltip_text" translatable="yes">Help</property>
                 <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">Help</property>
                 <property name="use_underline">True</property>
