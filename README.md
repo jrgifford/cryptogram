@@ -1,10 +1,26 @@
+So, here's the deal. I'm a fan of the [Rubinius open commit policy](http://www.programblings.com/2008/04/15/rubinius-for-the-layman-part-2-how-rubinius-is-friendly/), so like all Self-Appointed-Benevolent-Dicators, this is my only major decree.
+
+What does this mean?
+
+> Anyone who submits a patch which is accepted is granted commit access.
+
+
+Let me repeat that.
+
+> Anyone who submits a patch which is accepted is granted commit access.
+
+Ok, so anyone, and pretty much anyway. I'd prefer this to be via github, but you can email me a git patch and I'll accept that.
+
+
+
+
 External Requires:
-gi.repository.Gtk
-bs4
+`gi.repository.Gtk`
+`bs4`
 
 Standard Requires:
-string
-random
+`string`
+`random`
 
 Tested on python 2.7.3 and python 3.2.3 on Ubuntu 12.04 LTS.
 
@@ -13,6 +29,13 @@ Works as a portable application just launch the script in ./opt/pyCryptoGame/.
 Other directories are just placeholders for packaging/visualization before packaging.
 
 ##TODOs
+
+
+This is the biggest thing:
+
+# Get our existing code under unit tests.
+
+Now, James doesn't know Python, so he's lost when it comes to Python unit testing. If someone can help get the whole testing thing *started*, that'd be great. Otherwise, the following to-dos might get messy.
 
 ###Game logic/code
   Quote data back-end
@@ -63,4 +86,4 @@ Folder structure
     ui contains the glade file
 
 
-Written by Andrew King. James Gifford <james@jamesrgifford.com> appointed as maintainer [here](http://chat.stackexchange.com/transcript/message/5783681#5783681), and is released under the BSD license for the world to use, as he wished.
+Written by Andrew King. James Gifford `<james@jamesrgifford.com>` appointed as maintainer [here](http://chat.stackexchange.com/transcript/message/5783681#5783681), and is released under the BSD license for the world to use, as Andrew wished.
